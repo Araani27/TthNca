@@ -3,171 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD Teteh Nca ✨</title>
+    <title>HBD Teteh Nca 🤍</title>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;500&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold: #c5a028;
-            --soft-pink: #ffcad4;
-            --dark-pink: #f08080;
-            --glass: rgba(255, 255, 255, 0.8);
+            --accent: #e9c46a;
+            --soft-text: #6b705c;
+            --bg-grad: linear-gradient(180deg, #fff9f9 0%, #f7ebe8 100%);
+            --glass: rgba(255, 255, 255, 0.45);
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             margin: 0; padding: 0;
-            background: linear-gradient(180deg, #fffdf5 0%, #ffe5ec 100%);
-            color: #555;
-            font-family: 'Fredoka', sans-serif;
+            background: var(--bg-grad);
+            color: var(--soft-text);
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
-            width: 100%;
         }
 
-        /* Overlay Awal */
+        /* Overlay Elegan */
         #overlay {
             position: fixed; inset: 0;
-            background: white; z-index: 3000;
+            background: #ffffff; z-index: 9999;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
+            transition: 1.5s cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         .btn-start {
-            background: var(--dark-pink); color: white; border: none;
-            padding: 15px 40px; border-radius: 50px; font-size: 1.1rem;
-            cursor: pointer; box-shadow: 0 10px 20px rgba(240, 128, 128, 0.3);
-            font-weight: bold; transition: 0.3s;
+            background: none; border: 1.5px solid var(--accent);
+            color: var(--accent); padding: 12px 35px;
+            border-radius: 30px; font-size: 1rem; letter-spacing: 2px;
+            cursor: pointer; transition: 0.4s;
+            text-transform: uppercase;
         }
 
-        /* Layout Utama */
+        .btn-start:hover {
+            background: var(--accent); color: white;
+            box-shadow: 0 10px 20px rgba(233, 196, 106, 0.3);
+        }
+
+        /* Container & Header */
         .container { 
-            max-width: 450px; 
-            margin: 0 auto; 
-            padding: 20px;
+            max-width: 450px; margin: 0 auto; padding: 40px 20px;
             display: flex; flex-direction: column; align-items: center;
         }
 
-        header { text-align: center; margin-bottom: 40px; padding-top: 60px; }
+        header { text-align: center; margin-bottom: 80px; }
         
-        h1 { 
-            font-family: 'Dancing Script', cursive; 
-            font-size: 3rem; 
-            color: var(--gold);
-            margin: 0;
-            line-height: 1.2;
+        .special-text {
+            font-size: 0.7rem; letter-spacing: 6px; font-weight: 500;
+            color: #b7b7a4; text-transform: uppercase; margin-bottom: 15px;
         }
 
-        /* Section Card */
+        h1 { 
+            font-family: 'Dancing Script', cursive; font-size: 3.2rem; 
+            color: var(--accent); margin: 0;
+        }
+
+        /* Card Section Aesthetic */
         .section {
-            width: 100%;
-            margin-bottom: 40px;
-            padding: 25px 15px;
-            background: var(--glass);
-            backdrop-filter: blur(8px);
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            width: 100%; margin-bottom: 80px;
             display: flex; flex-direction: column; align-items: center;
+            position: relative;
         }
 
         .kalimat {
             font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: #666;
-            text-align: center;
-            padding: 0 10px;
+            font-size: 1.2rem; line-height: 1.8;
+            color: #555; text-align: center; margin-bottom: 30px;
+            font-style: italic; position: relative;
         }
 
-        /* Frame Foto Diperkecil & Dipercantik */
-        .foto-frame {
-            width: 85%; /* Ukuran lebih kecil proporsional */
-            max-width: 260px; 
-            padding: 10px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-            transform: rotate(-2deg); /* Efek estetik sedikit miring */
-            transition: 0.5s;
+        /* Polaroid Effect */
+        .polaroid {
+            width: 250px;
+            background: #fff;
+            padding: 12px 12px 35px 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border-radius: 2px;
+            transform: rotate(-1.5deg);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .section:nth-child(even) .foto-frame {
-            transform: rotate(2deg);
+        .section:nth-child(even) .polaroid { transform: rotate(1.5deg); }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.1);
         }
 
-        .foto-frame img { 
-            width: 100%; 
-            height: auto;
-            border-radius: 10px;
-            display: block;
+        .polaroid img { 
+            width: 100%; height: 300px; object-fit: cover;
+            filter: sepia(10%);
         }
 
-        /* Tombol Musik */
+        .polaroid-caption {
+            font-family: 'Dancing Script'; font-size: 1rem;
+            text-align: right; margin-top: 15px; color: #a5a5a5;
+        }
+
+        /* Floating Decoration */
+        .bg-circle {
+            position: fixed; width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(233, 196, 106, 0.1) 0%, transparent 70%);
+            z-index: -1; border-radius: 50%;
+        }
+
+        /* Control Musik */
         .music-btn {
-            position: fixed; bottom: 20px; right: 20px;
-            background: white; border: none; width: 45px; height: 45px;
-            border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer; z-index: 2000; font-size: 1.2rem;
+            position: fixed; bottom: 30px; left: 30px;
+            background: var(--glass); backdrop-filter: blur(5px);
+            border: none; width: 40px; height: 40px; border-radius: 50%;
+            cursor: pointer; z-index: 2000; display: grid; place-items: center;
+            color: var(--accent); border: 1px solid rgba(233, 196, 106, 0.2);
         }
 
         footer { 
-            text-align: center; padding: 40px 0; 
-            font-family: 'Dancing Script', cursive;
-            color: var(--dark-pink);
+            text-align: center; padding: 60px 0 20px; 
+            border-top: 1px solid rgba(0,0,0,0.03); width: 100%;
         }
 
-        .floating-element {
-            position: fixed; pointer-events: none; z-index: -1;
-            opacity: 0.6;
-        }
+        .sign { font-family: 'Dancing Script'; font-size: 1.6rem; color: var(--accent); }
     </style>
 </head>
 <body>
 
+    <div class="bg-circle" style="top: -100px; right: -50px;"></div>
+    <div class="bg-circle" style="bottom: 10%; left: -100px;"></div>
+
     <div id="overlay">
-        <div data-aos="zoom-in">
-            <h2 style="color: var(--gold); font-family: 'Dancing Script'; font-size: 2.2rem; margin-bottom: 25px;">For Teteh Nca 👑</h2>
-            <button class="btn-start" onclick="startApp()">Buka Kejutan ✨</button>
-        </div>
+        <p class="special-text" data-aos="fade-up">A Special Gift For</p>
+        <h2 style="font-family: 'Playfair Display'; font-style: italic; margin-bottom: 30px; font-weight: 500;">Teteh Nca ✨</h2>
+        <button class="btn-start" onclick="startApp()">Open Invitation</button>
     </div>
 
-    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+    <button class="music-btn" onclick="toggleMusic()">♪</button>
 
     <div class="container">
-        <header data-aos="fade-down">
-            <p style="letter-spacing: 3px; color: var(--dark-pink); font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">DEAREST SISTER</p>
-            <h1>Selamat Ulang Tahun</h1>
-            <h2 style="font-family: 'Playfair Display'; font-weight: 600; font-style: italic; color: #444; margin-top: 5px;">Teteh Nca</h2>
+        <header data-aos="fade-down" data-aos-duration="2000">
+            <p class="special-text">Chapter 2024</p>
+            <h1>Happy Birthday</h1>
+            <p style="font-size: 0.9rem; color: #a5a5a5; margin-top: 10px;">To someone very special</p>
         </header>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">"Barakallah fii umrik,<br>Teteh Nca sayang... ✨"</div>
-            <div class="foto-frame">
-                <img src="foto1.jpeg" alt="Foto 1">
+            <div class="kalimat">"Selamat ulang tahun,<br>Teteh Ncaaa ✨"</div>
+            <div class="polaroid">
+                <img src="foto1.jpeg" alt="Moment 1">
+                <div class="polaroid-caption">Best Moment #1</div>
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">"Semoga sehat selalu,<br>bahagia lahir & batin 💖"</div>
-            <div class="foto-frame">
-                <img src="foto2.jpeg" alt="Foto 2">
+            <div class="kalimat">"Semoga sehat selalu<br>dan bahagia terus ya 💖"</div>
+            <div class="polaroid">
+                <img src="foto2.jpeg" alt="Moment 2">
+                <div class="polaroid-caption">Beautiful Soul #2</div>
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">"Dimudahkan segala urusannya<br>dan dilancarkan rezekinya... 🤲"</div>
-            <div class="foto-frame">
-                <img src="foto3.jpeg" alt="Foto 3">
+            <div class="kalimat">"Semoga lancar rezekinya<br>dan berkah usianya... 🤲"</div>
+            <div class="polaroid">
+                <img src="foto3.jpeg" alt="Moment 3">
+                <div class="polaroid-caption">Blessings #3</div>
             </div>
         </div>
 
-        <footer data-aos="zoom-in">
-            <p style="margin-bottom: 0; font-size: 1.5rem;">With Love,</p>
-            <p style="font-size: 0.9rem; font-family: 'Fredoka', sans-serif; color: #999; margin-top: 5px;">Zahra, Bi Yuyun & Om Agam ❤️</p>
+        <footer data-aos="fade-in">
+            <p style="font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 10px;">WITH DEEPEST LOVE</p>
+            <div class="sign">Zahra, Bi Yuyun & Om Agam</div>
+            <p style="font-size: 0.6rem; margin-top: 20px; color: #ccc;">2024 • Forever Grateful</p>
         </footer>
     </div>
 
@@ -178,15 +189,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const music = document.getElementById('bgMusic');
-        AOS.init({ duration: 1000, once: false });
+        AOS.init({ duration: 1200, once: false });
 
         function startApp() {
             document.getElementById('overlay').style.opacity = '0';
+            document.getElementById('overlay').style.transform = 'scale(1.1)';
             setTimeout(() => {
                 document.getElementById('overlay').style.display = 'none';
-                music.play().catch(e => console.log("Audio play error"));
-            }, 1000);
-            setInterval(createFloating, 400); 
+                music.play().catch(e => console.log("Audio play deferred"));
+            }, 1200);
+            
+            // Floating items lebih elegan (bintang kecil)
+            setInterval(createFloating, 500); 
         }
 
         function toggleMusic() {
@@ -195,20 +209,22 @@
 
         function createFloating() {
             const f = document.createElement('div');
-            f.className = 'floating-element';
-            f.style.top = '-50px';
+            f.style.position = 'fixed';
+            f.style.top = '-20px';
             f.style.left = Math.random() * 100 + "vw";
-            const items = ["✨", "🌸", "💖", "🎂"];
-            f.innerHTML = items[Math.floor(Math.random() * items.length)];
-            f.style.fontSize = Math.random() * 15 + 15 + "px";
-            const duration = Math.random() * 3 + 5;
-            f.style.transition = `all ${duration}s linear`;
+            f.innerHTML = "✧";
+            f.style.color = "#e9c46a";
+            f.style.fontSize = Math.random() * 10 + 10 + "px";
+            f.style.opacity = Math.random();
+            f.style.zIndex = "-1";
+            f.style.transition = `all ${Math.random() * 4 + 4}s linear`;
             document.body.appendChild(f);
+            
             setTimeout(() => {
-                f.style.transform = `translateY(110vh) rotate(${Math.random() * 360}deg)`;
+                f.style.transform = `translateY(110vh) translateX(${Math.random() * 40 - 20}px)`;
                 f.style.opacity = "0";
             }, 100);
-            setTimeout(() => f.remove(), duration * 1000);
+            setTimeout(() => f.remove(), 8000);
         }
     </script>
 </body>
