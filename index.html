@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Teteh Nca ✨</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --cream: #fffdf5;
+            --pink: #ffafcc;
+            --glass: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            box-sizing: border-box; /* Mencegah elemen melebar keluar batas */
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background: linear-gradient(135deg, #fffdf5 0%, #ffe5ec 100%);
+            color: #4a4a4a;
+            font-family: 'Fredoka', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        #overlay {
+            position: fixed; inset: 0;
+            background: white; z-index: 3000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .btn-start {
+            background: var(--pink); color: white; border: none;
+            padding: 18px 50px; border-radius: 50px; font-size: 1.3rem;
+            cursor: pointer; box-shadow: 0 10px 30px rgba(255, 175, 204, 0.5);
+            font-weight: bold; transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-element {
+            position: fixed; pointer-events: none; z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Container dipastikan benar-benar di tengah layar */
+        .container { 
+            max-width: 500px; 
+            margin: 0 auto; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header { text-align: center; margin-bottom: 60px; padding-top: 50px; width: 100%; }
+        
+        h1 { 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 3.5rem; 
+            background: linear-gradient(45deg, #d4af37, #f1c40f, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .section {
+            width: 100%; /* Memenuhi lebar container */
+            margin-bottom: 60px;
+            text-align: center;
+            padding: 20px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 35px;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Memastikan isi section (kalimat & foto) di tengah */
+        }
+
+        .kalimat {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            color: #5d5d5d;
+            font-style: italic;
+        }
+
+        .foto-frame {
+            width: 100%; /* Frame mengikuti lebar section yang sudah dipadding */
+            max-width: 350px; /* Batas lebar agar tidak terlalu raksasa di layar lebar */
+            border: 8px solid white;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foto-frame img { 
+            width: 100%; 
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .music-btn {
+            position: fixed; bottom: 25px; right: 25px;
+            background: var(--glass); backdrop-filter: blur(10px);
+            border: 2px solid white; width: 55px; height: 55px;
+            border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            cursor: pointer; z-index: 2000; font-size: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 40px 0; 
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--gold);
+            width: 100%;
+        }
+
+        .glitter-text {
+            animation: glitter 3s linear infinite;
+        }
+
+        @keyframes glitter {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <div data-aos="zoom-in">
+            <h2 style="color: var(--gold); font-family: 'Dancing Script'; font-size: 2.5rem; margin-bottom: 20px;">For Teteh Nca 👑</h2>
+        </div>
+        <button class="btn-start" onclick="startApp()">Buka Kejutan ✨</button>
+    </div>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+    <div class="container">
+        <header data-aos="fade-down" data-aos-duration="1500">
+            <p style="letter-spacing: 5px; color: var(--pink); font-weight: bold; margin-bottom: 5px;">SPECIAL DAY</p>
+            <h1 class="glitter-text">Selamat Ulang Tahun</h1>
+            <h1 style="font-size: 2.2rem; -webkit-text-fill-color: #555;">Teteh Nca</h1>
+        </header>
+
+        <div class="section" data-aos="fade-up">
+            <div class="kalimat">
+                "Selamat ulang tahun ya <br>Teteh Ncaaa ✨"
+            </div>
+            <div class="foto-frame">
+                <img src="foto1.jpeg" alt="Foto 1">
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <div class="kalimat">
+                "Semoga sehat selaluuu <br>dan bahagia selalu 💖"
+            </div>
+            <div class="foto-frame">
+                <img src="foto2.jpeg" alt="Foto 2">
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <div class="kalimat">
+                "Panjang umur dan dilancarkan rezekinya ya teteh nca... 🤲"
+            </div>
+            <div class="foto-frame">
+                <img src="foto3.jpeg" alt="Foto 3">
+            </div>
+        </div>
+
+        <footer data-aos="zoom-in">
+            <p style="margin-bottom: 0; font-size: 1.4rem;">With Love,</p>
+            <p style="font-size: 1rem; font-family: 'Fredoka', sans-serif; color: #888; margin-top: 5px;">Zahra, Bi Yuyun dan Om Agam ❤️</p>
+        </footer>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const music = document.getElementById('bgMusic');
+
+        AOS.init({
+            once: false,
+            mirror: true,
+            duration: 1000,
+            offset: 120
+        });
+
+        function startApp() {
+            document.getElementById('overlay').style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                music.play().catch(e => console.log("Audio play deferred"));
+            }, 1200);
+            
+            setInterval(createFloating, 300); 
+        }
+
+        function toggleMusic() {
+            return music.paused ? music.play() : music.pause();
+        }
+
+        function createFloating() {
+            const f = document.createElement('div');
+            f.className = 'floating-element';
+            f.style.top = '-50px';
+            f.style.left = Math.random() * 100 + "vw";
+            const items = ["⭐", "💖", "✨", "🍭", "🎂", "🌸"];
+            f.innerHTML = items[Math.floor(Math.random() * items.length)];
+            f.style.fontSize = Math.random() * 20 + 20 + "px";
+            f.style.color = ["#d4af37", "#ffafcc", "#ffc8dd", "#fb6f92"][Math.floor(Math.random() * 4)];
+            const duration = Math.random() * 3 + 4;
+            f.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
+            document.body.appendChild(f);
+            setTimeout(() => {
+                f.style.transform = `translateY(110vh) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`;
+                f.style.opacity = "0";
+            }, 100);
+            setTimeout(() => f.remove(), duration * 1000);
+        }
+    </script>
+</body>
+</html>
