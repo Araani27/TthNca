@@ -3,149 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Ulang Tahun Teteh Nca ✨</title>
+    <title>HBD Teteh Nca ✨</title>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold: #d4af37;
-            --cream: #fffdf5;
-            --pink: #ffafcc;
-            --glass: rgba(255, 255, 255, 0.7);
+            --gold: #c5a028;
+            --soft-pink: #ffcad4;
+            --dark-pink: #f08080;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
-        * {
-            box-sizing: border-box; /* Mencegah elemen melebar keluar batas */
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0; padding: 0;
-            background: linear-gradient(135deg, #fffdf5 0%, #ffe5ec 100%);
-            color: #4a4a4a;
+            background: linear-gradient(180deg, #fffdf5 0%, #ffe5ec 100%);
+            color: #555;
             font-family: 'Fredoka', sans-serif;
             overflow-x: hidden;
             width: 100%;
         }
 
+        /* Overlay Awal */
         #overlay {
             position: fixed; inset: 0;
             background: white; z-index: 3000;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+            transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
         }
 
         .btn-start {
-            background: var(--pink); color: white; border: none;
-            padding: 18px 50px; border-radius: 50px; font-size: 1.3rem;
-            cursor: pointer; box-shadow: 0 10px 30px rgba(255, 175, 204, 0.5);
+            background: var(--dark-pink); color: white; border: none;
+            padding: 15px 40px; border-radius: 50px; font-size: 1.1rem;
+            cursor: pointer; box-shadow: 0 10px 20px rgba(240, 128, 128, 0.3);
             font-weight: bold; transition: 0.3s;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .floating-element {
-            position: fixed; pointer-events: none; z-index: -1;
-            opacity: 0.8;
-        }
-
-        /* Container dipastikan benar-benar di tengah layar */
+        /* Layout Utama */
         .container { 
-            max-width: 500px; 
+            max-width: 450px; 
             margin: 0 auto; 
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
         }
 
-        header { text-align: center; margin-bottom: 60px; padding-top: 50px; width: 100%; }
+        header { text-align: center; margin-bottom: 40px; padding-top: 60px; }
         
         h1 { 
             font-family: 'Dancing Script', cursive; 
-            font-size: 3.5rem; 
-            background: linear-gradient(45deg, #d4af37, #f1c40f, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3rem; 
+            color: var(--gold);
             margin: 0;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+            line-height: 1.2;
         }
 
+        /* Section Card */
         .section {
-            width: 100%; /* Memenuhi lebar container */
-            margin-bottom: 60px;
-            text-align: center;
-            padding: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+            padding: 25px 15px;
             background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 35px;
-            border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Memastikan isi section (kalimat & foto) di tengah */
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            display: flex; flex-direction: column; align-items: center;
         }
 
         .kalimat {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             margin-bottom: 20px;
-            line-height: 1.4;
-            color: #5d5d5d;
-            font-style: italic;
+            line-height: 1.6;
+            color: #666;
+            text-align: center;
+            padding: 0 10px;
         }
 
+        /* Frame Foto Diperkecil & Dipercantik */
         .foto-frame {
-            width: 100%; /* Frame mengikuti lebar section yang sudah dipadding */
-            max-width: 350px; /* Batas lebar agar tidak terlalu raksasa di layar lebar */
-            border: 8px solid white;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 85%; /* Ukuran lebih kecil proporsional */
+            max-width: 260px; 
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            transform: rotate(-2deg); /* Efek estetik sedikit miring */
+            transition: 0.5s;
+        }
+
+        .section:nth-child(even) .foto-frame {
+            transform: rotate(2deg);
         }
 
         .foto-frame img { 
             width: 100%; 
             height: auto;
+            border-radius: 10px;
             display: block;
-            object-fit: cover;
         }
 
+        /* Tombol Musik */
         .music-btn {
-            position: fixed; bottom: 25px; right: 25px;
-            background: var(--glass); backdrop-filter: blur(10px);
-            border: 2px solid white; width: 55px; height: 55px;
-            border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            cursor: pointer; z-index: 2000; font-size: 1.5rem;
-            display: flex; align-items: center; justify-content: center;
+            position: fixed; bottom: 20px; right: 20px;
+            background: white; border: none; width: 45px; height: 45px;
+            border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer; z-index: 2000; font-size: 1.2rem;
         }
 
         footer { 
-            text-align: center; 
-            padding: 40px 0; 
+            text-align: center; padding: 40px 0; 
             font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: var(--gold);
-            width: 100%;
+            color: var(--dark-pink);
         }
 
-        .glitter-text {
-            animation: glitter 3s linear infinite;
-        }
-
-        @keyframes glitter {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .floating-element {
+            position: fixed; pointer-events: none; z-index: -1;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -153,50 +130,44 @@
 
     <div id="overlay">
         <div data-aos="zoom-in">
-            <h2 style="color: var(--gold); font-family: 'Dancing Script'; font-size: 2.5rem; margin-bottom: 20px;">For Teteh Nca 👑</h2>
+            <h2 style="color: var(--gold); font-family: 'Dancing Script'; font-size: 2.2rem; margin-bottom: 25px;">For Teteh Nca 👑</h2>
+            <button class="btn-start" onclick="startApp()">Buka Kejutan ✨</button>
         </div>
-        <button class="btn-start" onclick="startApp()">Buka Kejutan ✨</button>
     </div>
 
     <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
     <div class="container">
-        <header data-aos="fade-down" data-aos-duration="1500">
-            <p style="letter-spacing: 5px; color: var(--pink); font-weight: bold; margin-bottom: 5px;">SPECIAL DAY</p>
-            <h1 class="glitter-text">Selamat Ulang Tahun</h1>
-            <h1 style="font-size: 2.2rem; -webkit-text-fill-color: #555;">Teteh Nca</h1>
+        <header data-aos="fade-down">
+            <p style="letter-spacing: 3px; color: var(--dark-pink); font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">DEAREST SISTER</p>
+            <h1>Selamat Ulang Tahun</h1>
+            <h2 style="font-family: 'Playfair Display'; font-weight: 600; font-style: italic; color: #444; margin-top: 5px;">Teteh Nca</h2>
         </header>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">
-                "Selamat ulang tahun ya <br>Teteh Ncaaa ✨"
-            </div>
+            <div class="kalimat">"Barakallah fii umrik,<br>Teteh Nca sayang... ✨"</div>
             <div class="foto-frame">
                 <img src="foto1.jpeg" alt="Foto 1">
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">
-                "Semoga sehat selaluuu <br>dan bahagia selalu 💖"
-            </div>
+            <div class="kalimat">"Semoga sehat selalu,<br>bahagia lahir & batin 💖"</div>
             <div class="foto-frame">
                 <img src="foto2.jpeg" alt="Foto 2">
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <div class="kalimat">
-                "Panjang umur dan dilancarkan rezekinya ya teteh nca... 🤲"
-            </div>
+            <div class="kalimat">"Dimudahkan segala urusannya<br>dan dilancarkan rezekinya... 🤲"</div>
             <div class="foto-frame">
                 <img src="foto3.jpeg" alt="Foto 3">
             </div>
         </div>
 
         <footer data-aos="zoom-in">
-            <p style="margin-bottom: 0; font-size: 1.4rem;">With Love,</p>
-            <p style="font-size: 1rem; font-family: 'Fredoka', sans-serif; color: #888; margin-top: 5px;">Zahra, Bi Yuyun dan Om Agam ❤️</p>
+            <p style="margin-bottom: 0; font-size: 1.5rem;">With Love,</p>
+            <p style="font-size: 0.9rem; font-family: 'Fredoka', sans-serif; color: #999; margin-top: 5px;">Zahra, Bi Yuyun & Om Agam ❤️</p>
         </footer>
     </div>
 
@@ -207,22 +178,15 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const music = document.getElementById('bgMusic');
-
-        AOS.init({
-            once: false,
-            mirror: true,
-            duration: 1000,
-            offset: 120
-        });
+        AOS.init({ duration: 1000, once: false });
 
         function startApp() {
-            document.getElementById('overlay').style.transform = 'translateY(-100%)';
+            document.getElementById('overlay').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('overlay').style.display = 'none';
-                music.play().catch(e => console.log("Audio play deferred"));
-            }, 1200);
-            
-            setInterval(createFloating, 300); 
+                music.play().catch(e => console.log("Audio play error"));
+            }, 1000);
+            setInterval(createFloating, 400); 
         }
 
         function toggleMusic() {
@@ -234,15 +198,14 @@
             f.className = 'floating-element';
             f.style.top = '-50px';
             f.style.left = Math.random() * 100 + "vw";
-            const items = ["⭐", "💖", "✨", "🍭", "🎂", "🌸"];
+            const items = ["✨", "🌸", "💖", "🎂"];
             f.innerHTML = items[Math.floor(Math.random() * items.length)];
-            f.style.fontSize = Math.random() * 20 + 20 + "px";
-            f.style.color = ["#d4af37", "#ffafcc", "#ffc8dd", "#fb6f92"][Math.floor(Math.random() * 4)];
-            const duration = Math.random() * 3 + 4;
-            f.style.transition = `transform ${duration}s linear, opacity ${duration}s`;
+            f.style.fontSize = Math.random() * 15 + 15 + "px";
+            const duration = Math.random() * 3 + 5;
+            f.style.transition = `all ${duration}s linear`;
             document.body.appendChild(f);
             setTimeout(() => {
-                f.style.transform = `translateY(110vh) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`;
+                f.style.transform = `translateY(110vh) rotate(${Math.random() * 360}deg)`;
                 f.style.opacity = "0";
             }, 100);
             setTimeout(() => f.remove(), duration * 1000);
